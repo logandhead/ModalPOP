@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ModalPOP Example</title>
+    <link href="assets/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="loginModal"  style="background:#fcfcfc; border-radius:5px; padding: 10px"class="modal_container clear">
+        <div class="modal_header clear">
+            <div style="text-align:right">
+            <a href="#" class="closeLogin">Close</a>
+                </div>
+            <h2 style="text-align:left; font-size:50px">
+              Login Example
+            </h2>
+        </div>
+        <div style="margin: 10px 0px"class="modal_body clear">
+            <div>
+                <p class="l-text">
+                  Log into your account!
+                </p>
+
+             
+
+
+                <div class="input-group">
+                    <input type="text" name="Email" id="Email" placeholder="e-mail" />
+                    <input type="password" name="Password" id="Password" placeholder="password" />
+
+                    <div style="margin-top:20px">
+                        <a href="#" class="fl-right passwordreset_modal m-text">Forgot Password?</a>
+                        <button type="submit" class="btn btn-black btn-lrg">Login</button>
+
+                    </div>
+                </div>
+                
+
+
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center; margin-top:20%">
+    <button class="btn btn-lrg btn-gray openLogin">Open ModalPop Window</button>
+        </div>
+    <script src="assets/jquery-1.10.2.min.js"></script>
+    <script src="assets/ModalPop.js"></script>
+
+    <script>
+
+        $(function () {
+            var loginModal = new modalPop({
+                element: "#loginModal",
+                opened: false,
+                position: "center",
+                height: 400,
+                width: 400
+            });
+           $(".openLogin").on('click', loginModal.open);
+            $(".closeLogin").on('click', loginModal.close);
+        });
+    </script>
+</body>
+</html>
